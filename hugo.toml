@@ -1,6 +1,6 @@
 baseURL = "https://blog.btdt.dev"
 languageCode = "en-us"
-theme = "hugo-theme-stack"
+theme = "stack"
 title = "mishoko | aspiring web3 security researcher"
 DefaultContentLanguage = "en"
 hasCJKLanguage = false
@@ -193,14 +193,14 @@ hasCJKLanguage = false
   [[menu.social]]
     identifier = "github"
     name = "GitHub"
-    url = "https://github.com/CaiJimmy/hugo-theme-stack"
+    url = "https://github.com/mishoko"
     [menu.social.params]
       icon = "brand-github"
 
   [[menu.social]]
     identifier = "twitter"
     name = "Twitter"
-    url = "https://twitter.com"
+    url = "https://x.com/0xmishoko"
     [menu.social.params]
       icon = "brand-twitter"
 
