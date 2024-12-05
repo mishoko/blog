@@ -1,0 +1,55 @@
+.audit-report {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+    .audit-header {
+        border-bottom: 2px solid #eee;
+        margin-bottom: 2rem;
+    }
+
+    .findings-summary {
+        background: #f8f9fa;
+        padding: 1rem;
+        margin-top: 2rem;
+        border-left: 4px solid #dc3545;
+    }
+}
+
+
+
+// Black and white avatar on other pages
+.site-avatar {
+    img {
+        filter: grayscale(175%);
+        transition: filter 0.6s ease;
+
+        &:hover {
+            filter: none; // Optional: return to color on hover
+        }
+    }
+}
+
+// Make main content area fill available space
+.main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-inner {
+    flex: 1;
+}
+
+// Ensure footer stays at bottom
+.site-footer {
+    margin-top: auto;
+    padding: 1rem 0;
+    width: 100%;
+}
+
+// If you want some extra space above footer
+.main article:last-child {
+    margin-bottom: 3rem;
+}

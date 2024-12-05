@@ -1,0 +1,26 @@
+{{ define "main" }}
+<article class="audit-report">
+    <header class="audit-header">
+        <h1>{{ .Title }}</h1>
+        <div class="audit-meta">
+            <span class="date">{{ .Date.Format "January 2, 2006" }}</span>
+            <span class="severity">Severity: {{ .Params.severity }}</span>
+        </div>
+    </header>
+
+    <div class="audit-content">
+        {{ .Content }}
+    </div>
+
+    <div class="findings-summary">
+        <h2>Key Findings</h2>
+        {{ with .Params.findings }}
+            <ul>
+                {{ range . }}
+                <li>{{ . }}</li>
+                {{ end }}
+            </ul>
+        {{ end }}
+    </div>
+</article>
+{{ end }}

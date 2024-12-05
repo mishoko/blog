@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name | Web3 Security Researcher</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Hero Section -->
+        <div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg text-white p-8 mb-8">
+            <h1 class="text-4xl font-bold mb-4">Web3 Security Research & Smart Contract Auditing</h1>
+            <p class="text-xl">Securing the decentralized future, one contract at a time.</p>
+        </div>
+
+        <!-- Featured Credentials -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4">Smart Contract Audit Experience</h2>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="border p-4 rounded">
+                    <h3 class="font-bold">Audit Reports</h3>
+                    <p>X Smart Contract Audits Completed</p>
+                </div>
+                <div class="border p-4 rounded">
+                    <h3 class="font-bold">Vulnerabilities Found</h3>
+                    <p>X Critical Vulnerabilities Identified</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Latest Posts -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {{ range first 4 (where .Site.RegularPages "Section" "web3") }}
+            <div class="bg-white rounded-lg shadow p-6">
+                <h3 class="text-xl font-bold mb-2">{{ .Title }}</h3>
+                <p class="text-gray-600 mb-4">{{ .Summary }}</p>
+                <a href="{{ .Permalink }}" class="text-blue-600 hover:text-blue-800">Read More →</a>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</body>
+</html>
