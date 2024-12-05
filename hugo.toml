@@ -1,0 +1,240 @@
+baseURL = "https://blog.btdt.dev"
+languageCode = "en-us"
+theme = "hugo-theme-stack"
+title = "mishoko | aspiring web3 security researcher"
+DefaultContentLanguage = "en"
+hasCJKLanguage = false
+
+[languages]
+  [languages.en]
+    languageName = "English"
+    title = "Example Site"
+    weight = 1
+    [languages.en.params.sidebar]
+      subtitle = "Example description"
+
+  [languages.zh-cn]
+    languageName = "中文"
+    title = "演示站点"
+    weight = 2
+    [languages.zh-cn.params.sidebar]
+      subtitle = "演示说明"
+
+  [languages.ar]
+    languageName = "عربي"
+    languagedirection = "rtl"
+    title = "موقع تجريبي"
+    weight = 3
+    [languages.ar.params.sidebar]
+      subtitle = "وصف تجريبي"
+
+[services]
+  [services.disqus]
+    shortname = "hugo-theme-stack"
+  [services.googleAnalytics]
+    id = ""
+
+[pagination]
+  pagerSize = 3
+
+[permalinks]
+  post = "/p/:slug/"
+  page = "/:slug/"
+
+[params]
+  mainSections = ["web3", "security", "tech"]
+  featuredImageField = "image"
+  rssFullContent = true
+  favicon = ""
+
+  [params.footer]
+    since = 2020
+    customText = ""
+
+  [params.dateFormat]
+    published = "Jan 02, 2006"
+    lastUpdated = "Jan 02, 2006 15:04 MST"
+
+  [params.sidebar]
+    emoji = "🍥"
+    subtitle = "web3 security researcher & smart Contract Auditor"
+    [params.sidebar.avatar]
+      enabled = true
+      local = true
+      src = "img/avatar.png"
+
+  [params.article]
+    math = false
+    toc = true
+    readingTime = true
+    [params.article.license]
+      enabled = true
+      default = "Licensed under CC BY-NC-SA 4.0"
+
+  [params.comments]
+    enabled = true
+    provider = "disqus"
+
+    [params.comments.disqusjs]
+      shortname = ""
+      apiUrl = ""
+      apiKey = ""
+      admin = ""
+      adminLabel = ""
+
+    [params.comments.utterances]
+      repo = ""
+      issueTerm = "pathname"
+      label = ""
+
+    [params.comments.beaudar]
+      repo = ""
+      issueTerm = "pathname"
+      label = ""
+      theme = ""
+
+    [params.comments.remark42]
+      host = ""
+      site = ""
+      locale = ""
+
+    [params.comments.vssue]
+      platform = ""
+      owner = ""
+      repo = ""
+      clientId = ""
+      clientSecret = ""
+      autoCreateIssue = false
+
+    [params.comments.waline]
+      serverURL = ""
+      lang = ""
+      pageview = ""
+      emoji = ["https://unpkg.com/@waline/emojis@1.0.1/weibo"]
+      requiredMeta = ["name", "email", "url"]
+      [params.comments.waline.locale]
+        admin = "Admin"
+        placeholder = ""
+
+    [params.comments.twikoo]
+      envId = ""
+      region = ""
+      path = ""
+      lang = ""
+
+    [params.comments.cactus]
+      defaultHomeserverUrl = "https://matrix.cactus.chat:8448"
+      serverName = "cactus.chat"
+      siteName = ""
+
+    [params.comments.giscus]
+      repo = ""
+      repoID = ""
+      category = ""
+      categoryID = ""
+      mapping = ""
+      lightTheme = ""
+      darkTheme = ""
+      reactionsEnabled = 1
+      emitMetadata = 0
+
+    [params.comments.gitalk]
+      owner = ""
+      admin = ""
+      repo = ""
+      clientID = ""
+      clientSecret = ""
+      proxy = ""
+
+    [params.comments.cusdis]
+      host = ""
+      id = ""
+
+  [params.widgets]
+    [[params.widgets.homepage]]
+      type = "search"
+    [[params.widgets.homepage]]
+      type = "archives"
+      limit = 5
+    [[params.widgets.homepage]]
+      type = "categories"
+      limit = 10
+    [[params.widgets.homepage]]
+      type = "tag-cloud"
+      limit = 10
+
+    [[params.widgets.page]]
+      type = "toc"
+
+  [params.opengraph]
+    [params.opengraph.twitter]
+      site = ""
+      card = "summary_large_image"
+
+  [params.defaultImage]
+    [params.defaultImage.opengraph]
+      enabled = false
+      local = false
+      src = ""
+
+  [params.colorScheme]
+    toggle = true
+    default = "auto"
+
+  [params.imageProcessing]
+    [params.imageProcessing.cover]
+      enabled = true
+    [params.imageProcessing.content]
+      enabled = true
+
+[menu]
+  [[menu.main]]
+
+  [[menu.social]]
+    identifier = "github"
+    name = "GitHub"
+    url = "https://github.com/CaiJimmy/hugo-theme-stack"
+    [menu.social.params]
+      icon = "brand-github"
+
+  [[menu.social]]
+    identifier = "twitter"
+    name = "Twitter"
+    url = "https://twitter.com"
+    [menu.social.params]
+      icon = "brand-twitter"
+
+[related]
+  includeNewer = true
+  threshold = 60
+  toLower = false
+  [[related.indices]]
+    name = "tags"
+    weight = 100
+  [[related.indices]]
+    name = "categories"
+    weight = 200
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      table = true
+      strikethrough = true
+      linkify = true
+      typographer = true
+    [markup.goldmark.renderer]
+      unsafe = true
+
+  [markup.tableOfContents]
+    endLevel = 4
+    ordered = true
+    startLevel = 2
+
+  [markup.highlight]
+    noClasses = false
+    codeFences = true
+    guessSyntax = true
+    lineNoStart = 1
+    lineNos = true
+    lineNumbersInTable = true
+    tabWidth = 4
