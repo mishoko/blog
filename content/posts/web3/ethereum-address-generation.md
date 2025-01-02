@@ -1,8 +1,8 @@
   
 
 ---
-title: "Ethereum Wallet Generation Process"
-description: "A detailed guide on the Ethereum wallet generation process."
+title: "Ethereum wallet generation process"
+description: "A detailed guide on the ethereum wallet generation process."
 date: 2025-01-02
 tags: ["ethereum", "address", "PBKDF2", "HMAC-SHA512", "hash", "seed", "wallet"]
 draft: false
