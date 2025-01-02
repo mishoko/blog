@@ -4,7 +4,7 @@ date = "2024-12-05"
 description = "Analysis of frequent security issues in smart contracts"
 categories = ["Security"]
 tags = ["Smart Contracts", "Web3", "Security"]
-draft = false
+draft = true
 +++
 
 ## Introduction

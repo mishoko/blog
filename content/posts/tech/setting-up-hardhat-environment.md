@@ -4,7 +4,7 @@ date = "2024-12-05"
 description = "Complete guide to setting up Hardhat for smart contract development"
 categories = ["Tech"]
 tags = ["Development", "Hardhat", "Solidity"]
-draft = false
+draft = true
 +++
 
 

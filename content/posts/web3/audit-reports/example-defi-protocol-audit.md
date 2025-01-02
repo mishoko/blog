@@ -6,7 +6,7 @@ categories = ['Web3', 'Audit Reports']
 tags = ['DeFi', 'Solidity', 'Smart Contracts', 'Security']
 severity = 'Critical'
 findings = ['Reentrancy vulnerability in lending function', 'Incorrect interest calculation']
-draft = false
+draft = true
 +++
 
 
