@@ -1,0 +1,17 @@
+<div class="mermaid">{{.Inner}}</div>
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'dark',
+    // securityLevel: 'loose',
+    themeVariables: {
+        primaryColor: '#BB86FC',
+        primaryTextColor: '#fff',
+        primaryBorderColor: '#fff',
+        lineColor: '#BB86FC',
+        secondaryColor: '#03DAC6',
+        tertiaryColor: '#CF6679'
+    }
+  });
+</script>
