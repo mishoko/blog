@@ -6,7 +6,7 @@ from pathlib import Path
 # Define paths
 attachments_dir = Path(os.getenv("ATTACHMENTS_DIR"))
 static_images_dir = Path(os.getenv("STATIC_IMAGES_DIR"))
-posts_dir = Path(os.getenv("POSTS_DIR"))
+posts_dir = Path(os.getenv("OBSIDIAN_DIR"))
 
 def verify_paths():
     """Verify all required paths exist."""
