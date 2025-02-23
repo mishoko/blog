@@ -49,7 +49,7 @@ m -->|take last 20 bytes| n[address bytes]
 
 n -->|eip-55 checksum| p[checksum address]
 
-o -->|add 0x prefix| o[basic address]
+p -->|add 0x prefix| o[basic address]
 
 
 
@@ -87,7 +87,7 @@ m1 -->|last 20 bytes| n1[/"57700b4f27e891b4bfb8da43d9ddb373b4bf694e"/]
 
 n1 -->|eip-55| p1[/"57700B4f27E891B4bFB8dA43D9DDb373B4BF694E"/]
 
-o1 -->|add 0x| o1[/"0x57700B4f27E891B4bFB8dA43D9DDb373B4BF694E"/]
+p1 -->|add 0x| o1[/"0x57700B4f27E891B4bFB8dA43D9DDb373B4BF694E"/]
 
 
 
