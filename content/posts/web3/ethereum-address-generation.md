@@ -2,7 +2,7 @@
 
 ---
 title: "Ethereum wallet generation process"
-description: "A detailed guide on the ethereum wallet generation process."
+description: "A detailed guide on the Ethereum wallet generation process."
 date: 2025-01-02
 tags: ["ethereum", "address", "PBKDF2", "HMAC-SHA512", "hash", "seed", "wallet"]
 draft: false
@@ -47,9 +47,11 @@ l -->|keccak-256| m[public key hash]
 
 m -->|take last 20 bytes| n[address bytes]
 
-n -->|add 0x prefix| o[basic address]
+n -->|eip-55 checksum| p[checksum address]
 
-o -->|eip-55 checksum| p[checksum address]
+o -->|add 0x prefix| o[basic address]
+
+
 
   
 
@@ -63,7 +65,7 @@ b1 -->|hmac-sha512| c1[/"master private key: 1837c1...cdf67\nmaster chain code: 
 
 c1 -->d1[/"m/44'/60'/0'"/]
 
-d1 -->|ckdpriv| e1[/"xprv9yG...mgT5"/]
+d1 -->|ckdpriv| e1[/"xprvA1zY...PhViXSB3"/]
 
 e1 -->|secp256k1| f1[/"xpub6CF...cfTk"/]
 
@@ -73,19 +75,21 @@ h1 -->|secp256k1| i1[/"xpub6DFh...tYuQ"/]
 
 h1 -->|derive| g1[/"m/44'/60'/0'/0"/]
 
-g1 --> j1[/"private key: 7d137f29d...3871263"/]
+g1 --> j1[/"private key: CE155FE8869...A9AA3044"/]
 
-j1 -->|secp256k1| k1[/"public key: 04e68acfc...b6fba39"/]
+j1 -->|secp256k1| k1[/"public key: 0443ccc6509b0c1 ... 9d981f3e42d4"/]
 
-k1 -->|remove 04| l1[/"e68acfc...ba39"/]
+k1 -->|remove 04| l1[/"43ccc6509...9d981f3e42d4"/]
 
-l1 -->|keccak-256| m1[/"5f27f5f6eb1f10c7d9...5cd1d6d0fd"/]
+l1 -->|keccak-256| m1[/"a297f6e2ad...73b4bf694e"/]
 
-m1 -->|last 20 bytes| n1[/"9858effd232b4033e47d90003d41ec34ecaeed94"/]
+m1 -->|last 20 bytes| n1[/"57700b4f27e891b4bfb8da43d9ddb373b4bf694e"/]
 
-n1 -->|add 0x| o1[/"0x9858effd232b4033e47d90003d41ec34ecaeed94"/]
+n1 -->|eip-55| p1[/"57700B4f27E891B4bFB8dA43D9DDb373B4BF694E"/]
 
-o1 -->|eip-55| p1[/"0x9858EfFD232B4033E47d90003D41EC34EcaEda94"/]
+o1 -->|add 0x| o1[/"0x57700B4f27E891B4bFB8dA43D9DDb373B4BF694E"/]
+
+
 
   
 
@@ -102,70 +106,21 @@ class a1,aa1,b1,c1,d1,e1,f1,g1,h1,i1,j1,k1,l1,m1,n1,o1,p1 example;
   
 
 {{< /mermaid >}}
-
-  
-
-  
-
 ## Mnemonic generation
 
-  
-
-  
-
 Example Mnemonic:
-
-  
-
-  
 
 ```text
 spare warfare link hope moon soon ankle vanish ball judge roof rate
 ```
-
-  
-
-  
-
-  
-
 - 12 or 24 words from BIP39 word list. Could also be 3, 6, 9, 15, 18, 21 words (uncommon)
-
-  
-
-  
-
 - Provides human-readable backup
-
-  
-
-  
-
 - Entropy source for wallet generation
-
-  
-
-  
-
-  
-
 - Additional Details:
-
-- Entropy: The mnemonic is derived from entropy:
-
-- 128 bits of entropy → 12 words.
-
-- 256 bits of entropy → 24 words.
-
-  
-
-- Checksum: A checksum is added to the entropy before converting it into words. For 128 bits of entropy, the checksum is 4 bits, making the total 132 bits. For 256 bits of entropy, the checksum is 8 bits, making the total 264 bits.
-
-  
-
-  
-
-  
+	- Entropy: The mnemonic is derived from entropy:
+	- 128 bits of entropy → 12 words.
+	- 256 bits of entropy → 24 words.
+	- Checksum: A checksum is added to the entropy before converting it into words. For 128 bits of entropy, the checksum is 4 bits, making the total 132 bits. For 256 bits of entropy, the checksum is 8 bits, making the total 264 bits.
 
 ## Passphrase (optional)
 
@@ -311,7 +266,8 @@ Example:
 
 - Output:
 
-- Seed: f5e6...a3b2 (512 bits).
+- Seed: 33c2b94ff6...fe30965ba (512 bits).
+
 
   
 
@@ -394,7 +350,7 @@ These components, along with metadata (version, depth, etc.), are combined into 
   
 
 - The binary structure is Base58Check-encoded to produce the final xprv
-
+for ex: `xprv9s21ZrQH143K44DCkvRhNBThD7gwnC7UfCjwyqqUMUq5ioVd4qGqAr1nxbYewmLTyWRRemQv8JBk6iNLRnaiJ7Y1ti9Wfbk4pztwQLwkvkk`
   
 
   
@@ -553,7 +509,7 @@ Example:
 
 - Index: 0' (2147483648).
 
-- Account Extended Private Key (xprv): `xprv9yGJtJtZQmhmov..DhdHcZmgT5`
+- Account Extended Private Key (xprv): `xprvA1zY..ViXSB3`
 
   
   
@@ -624,7 +580,7 @@ The BIP32 Extended Private Key is derived from the account extended private key 
 
 Inputs:
 
-- Account Extended Private Key (xprv): `xprv9yGJtJtZQmhmovaieo...XDhdHcZmgT5`
+- Account Extended Private Key (xprv): `xprvA1zYh...PhViXSB3`
 
   
 
@@ -721,11 +677,11 @@ Example:
 
 Example for first address (i=0):
 
-1. BIP32 extended private Key (m/44'/60'/0'/0) `xprv9xpXFh...tuqncb`
+1. BIP32 extended private Key (m/44'/60'/0'/0) `xprvA1zYhy...UBPhViXSB3`
 
-2. Derive ethereum private key (m/44'/60'/0'/0/0) Private Key: `7d137f29d4a38b...4c3871263`
+2. Derive ethereum private key (m/44'/60'/0'/0/0) Private Key:  for ex: `CE155FE8869EBAF8...5BF1C3F4A9AA3044`
 
-3. Generate public key: `04e68acfc0253a...020b7b6fba39`
+3. Generate public key: `43ccc6509b0c185..d981f3e42d4`
 
 4. Remove the '04' Prefix
 
