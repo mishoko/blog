@@ -94,19 +94,19 @@ hasCJKLanguage = false
 [menu]
     [[menu.main]]
         identifier = "web3"
-        name = "Web3"
+        name = "web3"
         url = "/posts/web3/"
         weight = 1
 
     [[menu.main]]
         identifier = "security"
-        name = "Security"
+        name = "security"
         url = "/posts/security/"
         weight = 2
 
     [[menu.main]]
         identifier = "tech"
-        name = "Tech"
+        name = "tech"
         url = "/posts/tech/"
         weight = 3
 
